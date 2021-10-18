@@ -1,21 +1,17 @@
 * {
   box-sizing: border-box;
+}
+body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.wrap {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(100px, auto);
 }
 
-.container {
-  display: flex;
-}
-.content {
-  display: flex;
-  justify-content: flex-start;
-}
-.registration {
-  display: flex;
-  flex-direction: column;
-  margin-top: 30px;
-  margin-left: 30px;
-}
 .icon {
   width: 50px;
   height: 50px;
@@ -25,7 +21,7 @@
 }
 .title {
   color: #000000;
-  font-size: 64px;
+  font-size: 50px;
   margin: 20px;
   margin-left: 0;
   font-weight: bold;
@@ -38,12 +34,17 @@
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.registrationInputs {
+.registration {
   display: flex;
   flex-direction: column;
+  margin: 0 15px;
 }
-input {
+.sign-in-btn {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin: auto;
   border-radius: 50px;
+  text-decoration: none;
   height: 40px;
   width: 80%;
   margin: 10px;
@@ -52,30 +53,36 @@ input {
   border: 1px solid #e2e8eb;
 }
 
-.text1 {
-  background-image: url("images/google.png");
-  background-position: left;
-  padding-left: 50px;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  cursor: pointer;
+.sign-in-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.text1::placeholder {
+.sign-in-google {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #474b4e;
 }
-.text2 {
-  background-image: url("images/apple.png");
-  background-position: left;
-  padding-left: 50px;
-  background-size: 20px;
-  background-repeat: no-repeat;
+.sign-in-apple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: default;
 }
-::placeholder {
-  color: #000000;
-}
-.text3 {
-  text-align: center;
+.sign-in-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 50px;
+  text-decoration: none;
+  height: 40px;
+  width: 80%;
+  margin: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid #e2e8eb;
   cursor: default;
 }
 
@@ -99,15 +106,6 @@ input {
   color: #68c9f8;
   text-decoration: none;
 }
-.image {
-  display: flex;
-}
-
-.wrap {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-}
 .navWrap {
   display: flex;
   justify-content: center;
@@ -118,8 +116,6 @@ input {
 .navbar {
   text-align: center;
   color: bisque;
-  height: 70px;
-  margin: 0 60px;
   margin-top: 10px;
 }
 .navbar a {
@@ -128,48 +124,25 @@ input {
   text-decoration: none;
   font-size: 13px;
 }
-@media (max-width: 900px) {
-  .container2 {
-    display: none;
+@media (min-width: 576px) {
+  .wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 600px 40px;
   }
-}
-@media (min-width: 900px) {
-  .container {
-    display: none;
+  .image {
+    grid-column: 1/3;
+    grid-row: 1/3;
   }
-  .container2 {
+  .content {
+    grid-column: 3/4;
+  }
+  .image img {
+    width: 100%;
     height: 100%;
   }
-  .wrap2 {
-    display: flex;
-    width: 100%;
-  }
-  .image2 {
-    display: flex;
-    width: 55%;
-  }
-  .content2 {
-    display: flex;
-    justify-content: flex-start;
-    width: 45%;
-  }
-  .registration2 {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-left: 30px;
-  }
 
-  input {
-    border-radius: 50px;
-    height: 40px;
-    width: 60%;
-    margin: 10px;
-    font-size: 15px;
-    font-weight: bold;
-    border: 1px solid #e2e8eb;
-  }
-  .rules {
-    width: 70%;
+  .navWrap {
+    margin-top: 20px;
   }
 }
