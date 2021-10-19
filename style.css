@@ -37,7 +37,7 @@ body {
 .registration {
   display: flex;
   flex-direction: column;
-  margin: 0 15px;
+  margin: 20px 15px;
 }
 .sign-in-btn {
   display: grid;
@@ -68,6 +68,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
   cursor: default;
 }
 .sign-in-email {
@@ -89,7 +90,7 @@ body {
 .rules {
   width: 90%;
   font-size: 13px;
-  margin: 10px;
+  margin: 10px 10px;
 }
 .rules a {
   color: #68c9f8;
@@ -99,7 +100,7 @@ body {
   text-decoration: underline;
 }
 .account {
-  margin: 20px 0;
+  margin: 20px 10px;
   font-size: 15px;
 }
 .account a {
@@ -116,7 +117,6 @@ body {
 .navbar {
   text-align: center;
   color: bisque;
-  margin-top: 10px;
 }
 .navbar a {
   padding: 8px;
@@ -128,21 +128,29 @@ body {
   .wrap {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 600px 40px;
+    grid-template-areas:
+      "image content"
+      "navWrap navWrap";
+    min-height: 100vh;
   }
   .image {
-    grid-column: 1/3;
-    grid-row: 1/3;
+    grid-area: image;
   }
   .content {
-    grid-column: 3/4;
+    grid-area: content;
   }
   .image img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
-
+  .sign-in-btn {
+    width: 50%;
+  }
+  .sign-in-email {
+    width: 50%;
+  }
   .navWrap {
-    margin-top: 20px;
+    grid-area: navWrap;
   }
 }
